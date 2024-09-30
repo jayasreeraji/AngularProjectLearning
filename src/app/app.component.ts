@@ -35,7 +35,7 @@ export class AppComponent {
   }
   updateUserName(username: HTMLInputElement) {
     this.userName = username.value;
-    console.log(username)
+    console.log(username);
   }
 }
 
