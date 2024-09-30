@@ -1,2 +1,67 @@
-<h1> {{title}} </h1>
-<h1> {{title}} </h1>
+<h1> First Angular App </h1>
+<!-- <h2> {{title}} </h2>  -->
+<!-- String Interpolation - To load dynamic data or Data Binding -->
+<!-- <p> {{ 1 + 1 }} </p> -->
+
+<!-- <img [src]="imgURL" alt="">  -->
+<!-- [src] - Property Binding -->
+
+<!-- String Interpolation vs Property Binding -->
+<!-- <button disabled = "{{isDisable}}">Disable using string interpolation</button>  -->
+<!-- In string interpolation boolean values are converted to a string values -->
+<!-- <button [disabled] = "isDisable">Disable using property binding</button> -->
+
+<!-- Why string interpolation? Returns values as string -->
+
+<!-- Class Binding -->
+<!-- Boolean Class Binding -->
+<!-- Way to dynamically add or remove css class to an HTML element based on condition or expression -->
+
+<!-- <button 
+    [class.active] = "isActive" 
+    [class.no-active] = "!isActive"
+    [class.active-border] = "isActive"
+    [class.no-active-border] = "!isActive"> 
+    Click me 
+</button> -->
+
+<!-- String Class Binding -->
+<!-- <button [class.apple] = "fruitName == 'Apple'">Fruit Ninja</button> -->
+
+<!-- Style Binding -->
+<!-- <button 
+    [style.background] = "isActive ? 'red' : 'green'"
+    [style.border] = "isActive ? '3px solid yellow' : '1px solid blue'"> 
+    Click 
+</button> -->
+
+
+<!-- <button [class.active] = "isActive"> Class Binding </button> -->
+
+<!-- Event Binding -->
+<!-- <button (click) = "buttonClick()"> Click me </button><br>
+<button (mouseover) = "buttonClick()"> Click me </button><br> -->
+
+
+<!-- Event Filtering I -->
+<!-- <input type = "text" (keyup) = "keyEnter($event)"><br> -->
+
+<!-- Event Filtering II -->
+<!-- <input 
+    id = "userInput" 
+    type="text" 
+    (keyup.enter) = "keyupFiltering(user)" 
+    #user>  -->
+<!-- Print when clicked enter or what key is give -->
+
+<!-- Two way data binding I-->
+<!-- It is a simple approach for manipulating user input data from 
+ view to component or component to view. 
+ In other words, we use this approach to send and receive data 
+ between component file to HTML file or HTML file to component file. -->
+
+<!-- #user - Template variable -->
+
+<input type = "text" [value] = "userName" #username (keyup.enter) = "updateUserName(username)" >
+
+<!-- Two way data binding II -->
