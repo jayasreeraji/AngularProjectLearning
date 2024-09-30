@@ -37,7 +37,6 @@ export class AppComponent {
     this.userName = username.value;
     console.log(username)
   }
-
 }
 
 // ts file is the main file of the Angular Component. Do all in this file. Without this ts file we can't create Angular Compoenent.
