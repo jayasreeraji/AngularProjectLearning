@@ -141,3 +141,28 @@
     <h4>Welcome Guest</h4>
 } -->
 
+<!-- ng template -->
+<h4 *ngIf="userRole == 'Admin'; else dynamicTemplate">Welcome Admin</h4>
+
+<ng-template #dynamicTemplate>
+    <p>This content is inside ng-template</p>
+</ng-template>
+
+<!-- ng-template Outlet -->
+
+<ng-template #callToAction>
+    <p>ng-template</p>
+    <button>Join Now</button>
+</ng-template>
+
+<div [ngTemplateOutlet] = "callToAction">
+    <h5>Sidebar</h5>
+</div>
+
+<div [ngTemplateOutlet] = "callToAction">
+    <h5>Hero</h5>
+</div>
+
+<div [ngTemplateOutlet] = "callToAction">
+    <h5>Footer</h5>
+</div>
