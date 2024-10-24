@@ -62,6 +62,26 @@
 
 <!-- #user - Template variable -->
 
-<input type = "text" [value] = "userName" #username (keyup.enter) = "updateUserName(username)" >
+<!-- <input type = "text" [value] = "userName" #username (keyup.enter) = "updateUserName(username)" > -->
 
 <!-- Two way data binding II -->
+
+<!-- <input type = "text" [(ngModel)] = "userName" >
+<h3>{{userName}}</h3> -->
+
+<!-- One way data binding -->
+<!-- we can only set data from component to view(HTML), we cannot modify or add changes to that data from view to send it back to the component -->
+<!-- 
+# String interpolation - {{title}}
+# Property binding - [src]
+# Class binding - [class.text-red]
+# Style binding - [style.backgroundColor]
+ -->
+<!-- <input type = "text" [value] = "textValue" (keyup.enter) = "onkeyup()"> -->
+
+<!-- Two way data binding -->
+<!-- we can pass data from component to view and alse we can modify that data and send it back to the view -->
+<!-- 
+# Two-way binding - [(ngModel)]
+-->
+<!-- <input type = "text" [(ngModel)] = "textValue" (keyup.enter) = "onkeyup()"> -->

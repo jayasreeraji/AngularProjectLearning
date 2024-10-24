@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 
 import { AppNavbar } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AppNavbar, HeaderComponent],
+  imports: [RouterOutlet, AppNavbar, HeaderComponent, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -18,12 +19,15 @@ export class AppComponent {
   isActive: boolean = true;
   fruitName: string = 'Apple';
   userName: string = 'Jayasree';
+  textValue: string = 'Value coming from component'
 
   buttonClick() {
     console.log('Button clicked')
   }
 
-  
+  onkeyup() {
+    console.log(this.textValue)
+  }  
 
   keyEnter(event:any) {
     console.log(event.keyCode);
