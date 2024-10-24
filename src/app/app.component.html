@@ -1,4 +1,4 @@
-<h1> First Angular App </h1>
+<!-- <h1> First Angular App </h1> -->
 <!-- <h2> {{title}} </h2>  -->
 <!-- String Interpolation - To load dynamic data or Data Binding -->
 <!-- <p> {{ 1 + 1 }} </p> -->
@@ -85,3 +85,59 @@
 # Two-way binding - [(ngModel)]
 -->
 <!-- <input type = "text" [(ngModel)] = "textValue" (keyup.enter) = "onkeyup()"> -->
+
+
+<!-- Angular Directives -->
+<!-- old way ngIf - No else condition if want use another ngIf --> 
+<!-- old of data -->
+<!-- <h2 *ngIf = "isLoggedIn; else message">{{userName}}</h2> 
+
+<h4 *ngIf = "!isLoggedIn">User is not logged in</h4>
+
+<ng-template #message>
+    <h4>User is not logged in (loaded using ng-template)</h4>
+</ng-template> -->
+
+<!-- new way @if -->
+<!-- @if (isLoggedIn) {
+    <h3>{{userName}}</h3>
+}
+@else {
+    <h4>User is not logged in (else block)</h4>
+}
+
+@if (!isLoggedIn) {
+    <h4>User is not logged in (else block)</h4>
+} -->
+
+<!-- If directives with number values -->
+<!-- <button (click) = "countLoginAttempts()" *ngIf = "loginCount < 4">Log in</button>
+
+<h4 *ngIf = "loginCount > 3">Exceeded 3 attempts, Try again later.</h4>
+
+@if (loginCount < 3) {
+    <button (click) = "countLoginAttempts()">Login Syntax</button>
+}
+
+@if (loginCount > 3) {
+    <h4>Exceeded 3 attempts, Try again later.</h4>
+} -->
+
+<!-- if directives with String values - I -->
+<!-- <h4 *ngIf="userRole == 'Admin'; else memberMessage">Welcome Admin</h4>
+
+<ng-template #memberMessage>
+    <h4>Welcome Member</h4>
+</ng-template> -->
+
+<!-- if directives with String values - II -->
+<!-- @if (userRole == 'Admin') {
+    <h4>Welcome Admin</h4>
+}
+@else if (userRole == 'Member') {
+    <h4>Welcome Member</h4>
+}
+@else {
+    <h4>Welcome Guest</h4>
+} -->
+
