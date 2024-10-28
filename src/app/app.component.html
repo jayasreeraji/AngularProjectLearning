@@ -142,15 +142,15 @@
 } -->
 
 <!-- ng template -->
-<h4 *ngIf="userRole == 'Admin'; else dynamicTemplate">Welcome Admin</h4>
+<!-- <h4 *ngIf="userRole == 'Admin'; else dynamicTemplate">Welcome Admin</h4>
 
 <ng-template #dynamicTemplate>
     <p>This content is inside ng-template</p>
-</ng-template>
+</ng-template> -->
 
 <!-- ng-template Outlet -->
 
-<ng-template #callToAction>
+<!-- <ng-template #callToAction>
     <p>ng-template</p>
     <button>Join Now</button>
 </ng-template>
@@ -165,4 +165,50 @@
 
 <div [ngTemplateOutlet] = "callToAction">
     <h5>Footer</h5>
-</div>
+</div> -->
+
+<!-- Ng for directives -->
+
+<!-- <h3>{{users}}</h3>
+
+<h3>{{users[0]}}</h3>
+<h3>{{users[1]}}</h3>
+<h3>{{users[2]}}</h3>
+<h3>{{users[3]}}</h3>
+
+<p>Loaded from ng for</p>
+<h3 *ngFor="let user of users"> {{user}} </h3>
+
+<p>For new syntax approach</p>
+@for (user of users; track user) {
+    <h3>{{user}} - Loaded using for syntax block</h3>
+} -->
+
+<!-- <ul>
+    <li *ngFor="let user of users">{{user}}</li>
+</ul>
+
+<ul>
+    @for (user of users; track user) {
+        <li>{{user}}</li>
+    }
+</ul> -->
+
+<!-- To load array ngfor tag  used -->
+
+<ul>
+    <li *ngFor="let user of usersObj">{{user.name}} <button (click)="onDelete(user)"> Delete </button></li>
+</ul>
+
+<!-- New angular syntax approach -->
+
+<ul>
+    @for (user of usersObj; track user) {
+        <li>{{user.name}}</li>
+    }
+</ul>
+
+<!-- Change Detection - Detects changes in the application such as a button click, an ajax request or any data value changes. 
+When changes occurs updates the DOM to reflect these changes in real time. Looks for changes when detect change immediately. -->
+
+<button (click)="addNewUser()">Add new user</button>

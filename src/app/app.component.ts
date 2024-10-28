@@ -4,12 +4,12 @@ import { RouterOutlet } from '@angular/router';
 import { AppNavbar } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
-import { NgIf, NgTemplateOutlet } from '@angular/common';
+import { NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AppNavbar, HeaderComponent, FormsModule, NgIf, NgTemplateOutlet],
+  imports: [RouterOutlet, AppNavbar, HeaderComponent, FormsModule, NgIf, NgTemplateOutlet, NgFor],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -45,16 +45,36 @@ export class AppComponent {
   //   console.log(username);
   // }
 
-  isLoggedIn: boolean = false;
-  userName: string = "Jayasree";
+  // isLoggedIn: boolean = false;
+  // userName: string = "Jayasree";
 
-  loginCount: number = 0;
+  // loginCount: number = 0;
 
-  userRole: string = "Member";
+  // userRole: string = "Member";
 
-  countLoginAttempts() {
-    this.loginCount ++;
-    console.log(this.loginCount)
+  // countLoginAttempts() {
+  //   this.loginCount ++;
+  //   console.log(this.loginCount)
+  // }
+
+  users: Array<string> = ['a', 'b', 'c', 'd'];
+
+  usersObj: Array<any> = [
+    {id: 1, name: 'A', email: 'a@gmail.com'},
+    {id: 2, name: 'B', email: 'b@gmail.com'},
+    {id: 3, name: 'C', email: 'c@gmail.com'},
+    {id: 4, name: 'D', email: 'd@gmail.com'},
+  ]
+
+  addNewUser () {
+    let user = {id: 5, name: 'User 1', email: 'user1@gmail.com'}
+    this.usersObj.push(user);
+  }
+
+  onDelete (user: object) {
+    let index = this.usersObj.indexOf(user);
+    this.usersObj.splice(index, 1);
+    // console.log(index);
   }
 }
 
