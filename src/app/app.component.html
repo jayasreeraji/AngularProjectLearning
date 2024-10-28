@@ -195,20 +195,55 @@
 </ul> -->
 
 <!-- To load array ngfor tag  used -->
+<!-- Old -->
 
-<ul>
-    <li *ngFor="let user of usersObj">{{user.name}} <button (click)="onDelete(user)"> Delete </button></li>
+<!-- <div *ngIf="usersObj.length == 0">
+    <p>No users to display</p>
+</div> -->
+
+<!-- <ul>
+    <li *ngFor="let user of usersObj; let i = index; let usersCount = count"> 
+        {{usersCount}} - {{i}} {{user.name}} 
+        <button (click)="onDelete(i)"> Delete </button>
+    </li>
 </ul>
+
+@if (usersObj.length == 0) {
+    <p>No users to display - Loaded using syntax</p>
+} -->
 
 <!-- New angular syntax approach -->
-
-<ul>
-    @for (user of usersObj; track user) {
-        <li>{{user.name}}</li>
+<!-- Use '$' for properties -->
+<!-- <ul>
+    @for (user of usersObj; track user; 
+            let i = $index; 
+            let usersCount = $count; 
+            let first = $first; 
+            let last = $last;
+            let even = $even;
+            let odd = $odd) { 
+        <li> 
+            {{odd}} - {{usersCount}} - {{i}} {{user.name}} 
+            <button (click)="onDelete(i)">Delete</button>
+        </li>
     }
-</ul>
+    @empty {
+        <p>No users to display - Loaded using syntax</p>
+    }
+</ul> -->
 
 <!-- Change Detection - Detects changes in the application such as a button click, an ajax request or any data value changes. 
 When changes occurs updates the DOM to reflect these changes in real time. Looks for changes when detect change immediately. -->
 
-<button (click)="addNewUser()">Add new user</button>
+<!-- <button (click)="addNewUser()">Add new user</button> -->
+
+<!-- ngSwitch Directives -->
+
+<!-- <div [ngSwitch]="usersRole">
+    <p *ngSwitchCase="'Admin'">Welcome Admin</p>
+    <p *ngSwitchCase="'Member'">Welcome Member</p>
+    <p *ngSwitchCase="'Editor'">Welcome Editor</p>
+
+    <p *ngSwitchDefault="''">Please login</p>
+</div> -->
+
