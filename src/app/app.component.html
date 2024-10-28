@@ -1,4 +1,4 @@
-<h1> First Angular App </h1>
+<!-- <h1> First Angular App </h1> -->
 <!-- <h2> {{title}} </h2>  -->
 <!-- String Interpolation - To load dynamic data or Data Binding -->
 <!-- <p> {{ 1 + 1 }} </p> -->
@@ -62,6 +62,153 @@
 
 <!-- #user - Template variable -->
 
-<input type = "text" [value] = "userName" #username (keyup.enter) = "updateUserName(username)" >
+<!-- <input type = "text" [value] = "userName" #username (keyup.enter) = "updateUserName(username)" > -->
 
 <!-- Two way data binding II -->
+
+<!-- <input type = "text" [(ngModel)] = "userName" >
+<h3>{{userName}}</h3> -->
+
+<!-- One way data binding -->
+<!-- we can only set data from component to view(HTML), we cannot modify or add changes to that data from view to send it back to the component -->
+<!-- 
+# String interpolation - {{title}}
+# Property binding - [src]
+# Class binding - [class.text-red]
+# Style binding - [style.backgroundColor]
+ -->
+<!-- <input type = "text" [value] = "textValue" (keyup.enter) = "onkeyup()"> -->
+
+<!-- Two way data binding -->
+<!-- we can pass data from component to view and alse we can modify that data and send it back to the view -->
+<!-- 
+# Two-way binding - [(ngModel)]
+-->
+<!-- <input type = "text" [(ngModel)] = "textValue" (keyup.enter) = "onkeyup()"> -->
+
+
+<!-- Angular Directives -->
+<!-- old way ngIf - No else condition if want use another ngIf --> 
+<!-- old of data -->
+<!-- <h2 *ngIf = "isLoggedIn; else message">{{userName}}</h2> 
+
+<h4 *ngIf = "!isLoggedIn">User is not logged in</h4>
+
+<ng-template #message>
+    <h4>User is not logged in (loaded using ng-template)</h4>
+</ng-template> -->
+
+<!-- new way @if -->
+<!-- @if (isLoggedIn) {
+    <h3>{{userName}}</h3>
+}
+@else {
+    <h4>User is not logged in (else block)</h4>
+}
+
+@if (!isLoggedIn) {
+    <h4>User is not logged in (else block)</h4>
+} -->
+
+<!-- If directives with number values -->
+<!-- <button (click) = "countLoginAttempts()" *ngIf = "loginCount < 4">Log in</button>
+
+<h4 *ngIf = "loginCount > 3">Exceeded 3 attempts, Try again later.</h4>
+
+@if (loginCount < 3) {
+    <button (click) = "countLoginAttempts()">Login Syntax</button>
+}
+
+@if (loginCount > 3) {
+    <h4>Exceeded 3 attempts, Try again later.</h4>
+} -->
+
+<!-- if directives with String values - I -->
+<!-- <h4 *ngIf="userRole == 'Admin'; else memberMessage">Welcome Admin</h4>
+
+<ng-template #memberMessage>
+    <h4>Welcome Member</h4>
+</ng-template> -->
+
+<!-- if directives with String values - II -->
+<!-- @if (userRole == 'Admin') {
+    <h4>Welcome Admin</h4>
+}
+@else if (userRole == 'Member') {
+    <h4>Welcome Member</h4>
+}
+@else {
+    <h4>Welcome Guest</h4>
+} -->
+
+<!-- ng template -->
+<!-- <h4 *ngIf="userRole == 'Admin'; else dynamicTemplate">Welcome Admin</h4>
+
+<ng-template #dynamicTemplate>
+    <p>This content is inside ng-template</p>
+</ng-template> -->
+
+<!-- ng-template Outlet -->
+
+<!-- <ng-template #callToAction>
+    <p>ng-template</p>
+    <button>Join Now</button>
+</ng-template>
+
+<div [ngTemplateOutlet] = "callToAction">
+    <h5>Sidebar</h5>
+</div>
+
+<div [ngTemplateOutlet] = "callToAction">
+    <h5>Hero</h5>
+</div>
+
+<div [ngTemplateOutlet] = "callToAction">
+    <h5>Footer</h5>
+</div> -->
+
+<!-- Ng for directives -->
+
+<!-- <h3>{{users}}</h3>
+
+<h3>{{users[0]}}</h3>
+<h3>{{users[1]}}</h3>
+<h3>{{users[2]}}</h3>
+<h3>{{users[3]}}</h3>
+
+<p>Loaded from ng for</p>
+<h3 *ngFor="let user of users"> {{user}} </h3>
+
+<p>For new syntax approach</p>
+@for (user of users; track user) {
+    <h3>{{user}} - Loaded using for syntax block</h3>
+} -->
+
+<!-- <ul>
+    <li *ngFor="let user of users">{{user}}</li>
+</ul>
+
+<ul>
+    @for (user of users; track user) {
+        <li>{{user}}</li>
+    }
+</ul> -->
+
+<!-- To load array ngfor tag  used -->
+
+<ul>
+    <li *ngFor="let user of usersObj">{{user.name}} <button (click)="onDelete(user)"> Delete </button></li>
+</ul>
+
+<!-- New angular syntax approach -->
+
+<ul>
+    @for (user of usersObj; track user) {
+        <li>{{user.name}}</li>
+    }
+</ul>
+
+<!-- Change Detection - Detects changes in the application such as a button click, an ajax request or any data value changes. 
+When changes occurs updates the DOM to reflect these changes in real time. Looks for changes when detect change immediately. -->
+
+<button (click)="addNewUser()">Add new user</button>
